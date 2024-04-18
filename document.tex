@@ -1,0 +1,118 @@
+\documentclass[10pt,twocolumn]{article}
+
+% use the oxycomps style file
+\usepackage{oxycomps}
+
+% usage: \fixme[comments describing issue]{text to be fixed}
+% define \fixme as not doing anything special
+\newcommand{\fixme}[2][]{#2}
+% overwrite it so it shows up as red
+\renewcommand{\fixme}[2][]{\textcolor{red}{#2}}
+% overwrite it again so related text shows as footnotes
+%\renewcommand{\fixme}[2][]{\textcolor{red}{#2\footnote{#1}}}
+
+% read references.bib for the bibtex data
+\bibliography{references}
+
+% include metadata in the generated pdf file
+\pdfinfo{
+    /Title (Junior Comps Ethics Paper)
+    /Author (Rui Chai)
+}
+
+% set the title and author information
+\title{Junior Comps Ethics Paper}
+\author{Rui Chai}
+\affiliation{Occidental College}
+\email{rchai@oxy.edu}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Introduction}
+Developing an ethical, trustworthy platform that provides value to its users is a challenge. As we build a dining information system powered by user-generated content, we must proactively address several key ethical considerations upfront.
+
+After carefully investigating the ethical considerations surrounding similar apps like Yelp, Google Reviews and Uber Eats, as well as considering our own life experience, we address multiple ethical concerns around our dining review app. They are data bias, accessibility, transparency, privacy, security, consent, abusive content, future maintenance, power dynamics, and technological solutionism. We believe that With proper foresight and committed practices, we can create a tool that provides value to users while upholding ethical principles. This introduction sets the stage for exploring each of these areas in more depth.
+
+
+
+\section{Data Bias}
+One of the foremost ethical concerns regarding our project is data bias. The platform we are developing relies heavily on user-generated content in the form of reviews, comments, ratings, and other subjective contents. Such data inherently introduces biases based on the demographics, life experiences, personal preferences, and perspectives of the users. Even with a large and diverse set of users, there is an unavoidable skew in the data based on who chooses to contribute.
+
+While it seems nearly impossible to completely eliminate such bias due to the inherently subjective nature of reviews and comments, there are still several approaches we could take to mitigate bias. Firstly, we could employ certain algorithms to detect biases in the data and adjust for them through algorithmic debiasing methods. However, this comes with its own risks of perpetuating biases present in the training data. Thus we must be extremely diligent about curating unbiased training sets. Furthermore, we can collaborate with interdisciplinary professors to discover innovative solutions in bias mitigation. Through these efforts, our aim is not only to diminish the impact of bias but also to foster an environment where all voices are equitably recognized and respected. While challenges undoubtedly lie ahead, our commitment to upholding the ethical standards underscores our aspiration for the platform to serve as a open forum of freedom of speech, fairness and integrity amidst the complexities of the digital world. 
+
+
+
+\section{Accessibility}
+Accessibility is another critical ethical consideration that poses a significant challenge. While the platform aims to provide comprehensive dining information to all users, certain features may cause inconvenience or accessibility barriers for individuals with disabilities. We should ensure the platform is as accessible as possible to users with a wide range of needs and capabilities.
+
+We will make accessibility an main focus throughout the entire development process. We will adhere to web accessibility standards and best practices like providing alternative text for images, ensuring readable color contrast, implementing keyboard navigation functionality, and other features that help our user to use our app freely. Beyond just meeting technical requirements, we will also conduct user testing with people with disability to better understand their needs and areas for improvement.
+
+Furthermore, we will receive comprehensive training and education around accessibility principles and conscious design practices. We will learn how to integrate features that meet the needs of people with disablities through online and in-person resources. Ultimately, the goal is to create a seamless, delightful experience for all users, regardless of their physical, cognitive, or other abilities and constraints.
+
+Prioritizing accessibility is not just an ethical obligation, but an opportunity to build an inclusive product that can reach the broadest possible audience. It will be a complicated process, but we wish our efforts will ultimately benefit the utility and impact of the platform.
+
+
+
+\section{Transparency}
+
+A common ethical critique of many technology platforms is the lack of transparency around the algorithms making decisions that impact users and businesses. While this is a valid concern for more complex apps like Yelp which employ opaque, proprietary recommendation engines, our dining app's smaller scale and relatively simple algorithms help mitigate this issue.
+
+First, our app will be completely free and open source, allowing full visibility into the code base. Such transparency ensures we are not obscuring any aspects of how the app functions from users. There are no "black box" components.
+
+Secondly, the recommendation algorithms we employ are based on existing, well-understood techniques that only take into account a limited set of factors like review scores, times visited, cuisine preferences, etc. We are not developing any highly complex machine learning models prone to issues like feedback loops or hidden biases.
+
+To further promote understanding, we will also include a user-friendly handbook that explains in plain language exactly how the rating and recommendation logic works within the program. This actively removes any barriers and equips users with the knowledge to make sense of why they encounter certain results.
+
+By keeping our algorithms simple, openly documenting them, and embracing a transparent technology, we avoid many of the ethical pitfalls around opaque, unaccountable decision-making processes. Users can trust that there is no obscured "magic" happening - just a straightforward system acting on their preferences and the community's inputs. This transparent approach helps us build an ethical technology platform.
+
+\section{Privacy, Security, and Consent}
+People may argue that a college student's project lacks robust data security measures. This concern may stem from the misunderstanding that we will have to design the entire system architecture from scratch on our own. However, we are able to effectively protect users' data and preferences by applying advanced and secured authentication system and database provided by Google's Firebase platform. 
+
+We will not store any user information on local devices or private servers. Instead, we will connect directly with Google Firebase throughout the entire project life cycle, thus effectively preventing potential data leakages. Firebase is a comprehensive app development platform that provides secure cloud-based storage, authentication services, real-time databases, and robust hosting - all built with enterprise-grade security practices.
+
+Additionally, we will ensure secured access to user data by cautiously implementing principles like encryption, access controls, and other industry best practices. We will not collect any user's private information beyond what is necessary. We only collect name, email address and phone number for account verification purposes. 
+
+We are committed to full compliance with laws and regulations regarding data privacy and usage. We will not sell user's data to third parties.  Aligned with our value of transparency, we will provide clear explanations so users understand their rights and controls over their personal data. Furthermore, we will practice informed consent by ensuring users opt-in to any data collection or usage policies. Their privacy will always be respected and prioritized. If a user wishes to delete their account, we will clean all associated data from our systems.
+
+
+
+\section{Abusive Content}
+One significant ethical concern is the potential for users to post inappropriate content such as violence, hate speech, harassment, and misinformation on the platform. This type of abusive content could create an unwelcome, toxic environment that undermines the purpose of providing helpful dining information. 
+
+Another ethical issue related to abusive content is the risk of "weaponized reviews" - users exploiting the system through unethical means like submitting fake, malicious reviews intended to unfairly punish a specific dining facility or worker. Users could also attempt to flood the system with massive volumes of unrelated spam information, or use this platform to express their particular political views or protests, which would not align with the our values.
+
+Dealing with abusive content is an inevitable challenge for any platform that relies on user-generated content at scale. However, there are several approaches we can take to help minimize these issues. One useful tactic is to have actual human moderators review user-generated content and remove anything violating community guidelines. However, we must recognize the limitations that detecting and removing all illegitimate reviews manually is an endless game. On the other hand, since this platform will initially only be open to the relatively small Occidental college community, we could take the advantage of a higher moral standard and sense of community accountability. Students, faculty, staff, and alumni may be less inclined to abuse a system intended for their own benefit. Clear community policies, reputation systems, and reporting flows could help maintaining a welcoming environment.
+
+\section{Maintenance}
+
+While the successful launch of this dining information platform would be an exciting milestone, ensuring its long-term viability presents an ongoing challenge. Like any software application, it will require consistent updates, bug fixes, and adaptations to meet evolving user needs over time. Maintaining an active development road map is critical for preventing functionality and security concerns.
+
+In the short term, we can commit to keeping the app updated and supported at least through our graduation from Occidental. However, we recognize that relying solely on a college student is not a sustainable approach for long-term maintenance. 
+
+One possibility is establishing a group where we can hire passionate student developers and have them hand off the project to successive groups of students upon graduating. Properly training developers, creating documentation, and implementing robust knowledge transfer processes could help build this cycle. Ideally, we can cultivate an engaged community around this project within Occidental students and faculty.
+
+At the same time, we could explore potential partnerships with industry, alumni, or community organizations interested in the app's mission. By opening roles to external contributors with shared values, we expand the talent pool and establish a lasting partnership. Their diverse perspectives and deeper resources could also help drive further evolution and expansion.
+
+Ultimately, this platform requires creative thinking about resourcing and governance structures from the very beginning. Relying on a finite student team alone risks the app becoming abandoned once that cycle completes. By designing proactive long-term sustainability strategies now, we increase the chances of this project having an enduring positive impact on campus dining experience for years to come.
+
+
+
+\section{Power Dynamics}
+As an app centered around user reviews, our project fundamentally aims to distribute power to a wider range of people and decentralize influence. Rather than having the school dictating narratives about dining experiences, we enable any user to share their authentic perspective publicly. This creates a democratized space for free discussion.
+
+Within this open forum, users can share their honest opinions, exchange viewpoints with others, and even engage directly with dining facility staff through integrated communication channels. By amplifying these diverse voices and facilitating transparent dialogue, we shift power dynamics. With this platform, users' collective voices can influence decisions rather than having policies unilaterally handed down by the college officials.
+
+The transparent nature of aggregated user reviews holds our dining facilities accountable in a way that was made possible by mass supervision and feedback. If poor experiences are consistently reported, managers have to respond and improve. Conversely, users upvote positive experiences and thus elevating and rewarding better service.
+
+This distribution of influence creates a healthier equilibrium. No single user has control over the influence, but the broad aggregate of many data points exposes meaningful patterns that cannot be easily ignored or manipulated by any one party.  Our college, as a reputable institution, should welcome this open feedback as a way to identify strengths and areas for improvement authentically.
+
+Our review platform gives underrepresented groups and individuals a voice that may have previously gone unheard in the discourse around campus dining. By empowering users to share stories and offering an equal platform, we inspire engagement and collaboration towards the common good.
+
+\section{Technological Solutionism}
+
+\section{Summary}
+
+\end{document}
